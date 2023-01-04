@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home_page</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        label{
+            width: 90px;
+            display: inline-block;
+            color: maroon;
+        }
+        /* input{
+            display: inline-block;
+        } */
+        form{
+            text-align: center;
+
+        
+        }
+        h1{
+
+            text-align: center;
+        }
+
+        .h{
+
+            text-align: center;
+            color: blueviolet;
+         }
+        
+
+
+    </style>
+
+    <h1 class="h">Calories Burnt predictor</h1>
+
+    <form method ="POST" >
+        {% csrf_token %}
+
+        <label for="name">Name:</label>
+        <input id = "name" type="text" name="name">
+        <br><br>
+
+        <label for="gen">Gender:</label>
+        <input type="radio" name="gender" value=0> Male
+        <input type="radio" name="gender" value=1> Female
+        <br><br>
+        <label for="Age">Age:</label>
+        <input id = "Age"type="number" name="age" placeholder="in years..">
+        <br><br>
+
+        <label for="height">Height:</label>
+        <input id = "height" type="number" name="height" placeholder="in cm...">
+        <br><br>
+        
+        <label for="weight">Weight:</label>
+        <input id = "weight" type="number" name="weight" placeholder="in Kg...">
+        <br><br>
+        
+        
+        <label for="Duration">Duration:</label>
+        <input id = "Duration" type= "number" name="duration"  placeholder="in min..">
+        <br><br>
+
+        
+        <label for="hr">Heart Rate:</label>
+        <input id = "hr" type="number" name="hr">
+        <br><br>
+
+
+        <label for="temp">Temperature:</label>
+        <input id = "temp"  name="temp" placeholder = "in celcius..">
+        <br><br>
+        <input style="color: darkgreen;" type="submit" >
+        
+
+
+
+    </form>
+    <h1>Predicted calories burnt is : <h1 style="color: rgb(233, 8, 8);">{{calories}}</h1> </h1>
+    
+</body>
+</html>
