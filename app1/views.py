@@ -29,6 +29,6 @@ def home(request):
         df = pd.DataFrame(input_data_set)
         prediction = model.predict (df)
 
-        return render(request,"home.html" , {"calories":prediction[0]} )
+        return render(request,"index.html" , {"calories":prediction[0]} )
 
-    return render(request,"home.html"  )
+    return render(request,"index.html"  )
